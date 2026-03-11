@@ -73,7 +73,7 @@ async function registerUserController(req, res) {
  */
 
 async function loginUserController(req, res) {
-
+   
     const {email, password} = req.body;
 
     const user = await userModel.findOne({email})
