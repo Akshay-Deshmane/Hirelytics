@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken")
 const tokenBlacklistModel = require("../models/blacklist.model")
 
 
-async function authUse(req, res, next) {
+async function authUser(req, res, next) {
    
     const token = req.cookies.token
 
@@ -43,4 +43,4 @@ async function authUse(req, res, next) {
 }
 
 
-module.exports = {authUse}
+module.exports = {authUser}
