@@ -1,10 +1,10 @@
 const express = require("express")
-const authMiddelware = require("../middleware/auth.middleware")
+const authMiddleware = require("../middleware/auth.middleware")
 const interviewController = require("../controllers/interview.controller")
 const upload = require("../middleware/file.middleware")
 
 
-const interViewRouter = express.Router()
+const interviewRouter = express.Router()
 
 /**
  * @route POST /api/interview/
@@ -13,29 +13,28 @@ const interViewRouter = express.Router()
  * @access private
  */
 
-// interViewRouter.post("/", authMiddelware.authUser, upload.single("resume"), interviewController.generateInterViewReportController)
-
-interViewRouter.post(
-  "/",
-  authMiddelware.authUser,
-  upload.single("resume"),
-  (req, res) => {
-
-    console.log("FILE:", req.file)
-    console.log("BODY:", req.body)
-
-    res.json({
-      file: req.file,
-      body: req.body
-    })
-  }
-)
+interviewRouter.post("/", authMiddleware.authUser, upload.single("resume"), interviewController.generateInterViewReportController)
 
 
+/**
+ * @route GET/api/interview/report/:interviewId
+ * @description get interview report by interviewId
+ * @access private
+ */
+
+interviewRouter.get("/report/:interviewId", authMiddleware.authUser, interviewController.getInterviewReportByIdController)
 
 
+/**
+ * @route GET/api/interview/
+ * @description get all interview reports of logged in user
+ * @access private
+ */
 
-module.exports = interViewRouter
+interviewRouter.get("/", authMiddleware.authUser, interviewController.getAllinterviewReportsController)
+
+
+module.exports = interviewRouter
 
 
 
