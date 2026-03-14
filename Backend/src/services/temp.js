@@ -43,8 +43,7 @@ Used PostgreSQL and Sequelize ORM.
 Education
 
 Bachelor of Technology (Computer Science)
-Delhi Technological University | 2022`
-
+Delhi Technological University | 2022`;
 
 const selfDescription = `I am a passionate and detail-oriented Backend Engineer with a strong interest in designing scalable, secure, and high-performance server-side applications.
 I enjoy building efficient APIs, managing databases, and solving complex technical problems that improve the overall performance and reliability of web applications.
@@ -55,9 +54,7 @@ I focus on writing clean, maintainable, and well-structured code while following
 
 In addition to backend development, I have a solid understanding of system design concepts, database optimization, and performance tuning. I enjoy analyzing problems and creating efficient solutions that improve scalability and reduce response times. I am also familiar with containerization tools like Docker and deployment platforms such as AWS and Firebase.
 
-I am a continuous learner who enjoys exploring new technologies and improving my skills through real-world projects and collaboration with other developers. My goal is to build reliable backend systems that power modern applications and contribute to meaningful software products.`
-
-
+I am a continuous learner who enjoys exploring new technologies and improving my skills through real-world projects and collaboration with other developers. My goal is to build reliable backend systems that power modern applications and contribute to meaningful software products.`;
 
 const jobDescription = `
 Backend Engineer – Job Description
@@ -130,13 +127,10 @@ Knowledge of system design principles.
 Familiarity with containerization and cloud deployment.
 Understanding of software development best practices.
 
-`
-
-
-
-
-
+`;
 
 module.exports = {
-    resume, selfDescription, jobDescription
-}
+  resume,
+  selfDescription,
+  jobDescription,
+};

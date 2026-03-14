@@ -1,10 +1,9 @@
-const express = require("express")
-const authMiddleware = require("../middleware/auth.middleware")
-const interviewController = require("../controllers/interview.controller")
-const upload = require("../middleware/file.middleware")
+const express = require("express");
+const authMiddleware = require("../middleware/auth.middleware");
+const interviewController = require("../controllers/interview.controller");
+const upload = require("../middleware/file.middleware");
 
-
-const interviewRouter = express.Router()
+const interviewRouter = express.Router();
 
 /**
  * @route POST /api/interview/
@@ -13,8 +12,12 @@ const interviewRouter = express.Router()
  * @access private
  */
 
-interviewRouter.post("/", authMiddleware.authUser, upload.single("resume"), interviewController.generateInterViewReportController)
-
+interviewRouter.post(
+  "/",
+  authMiddleware.authUser,
+  upload.single("resume"),
+  interviewController.generateInterViewReportController,
+);
 
 /**
  * @route GET/api/interview/report/:interviewId
@@ -22,8 +25,11 @@ interviewRouter.post("/", authMiddleware.authUser, upload.single("resume"), inte
  * @access private
  */
 
-interviewRouter.get("/report/:interviewId", authMiddleware.authUser, interviewController.getInterviewReportByIdController)
-
+interviewRouter.get(
+  "/report/:interviewId",
+  authMiddleware.authUser,
+  interviewController.getInterviewReportByIdController,
+);
 
 /**
  * @route GET/api/interview/
@@ -31,11 +37,10 @@ interviewRouter.get("/report/:interviewId", authMiddleware.authUser, interviewCo
  * @access private
  */
 
-interviewRouter.get("/", authMiddleware.authUser, interviewController.getAllinterviewReportsController)
+interviewRouter.get(
+  "/",
+  authMiddleware.authUser,
+  interviewController.getAllinterviewReportsController,
+);
 
-
-module.exports = interviewRouter
-
-
-
-
+module.exports = interviewRouter;
